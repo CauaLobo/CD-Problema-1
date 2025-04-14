@@ -8,7 +8,7 @@ A pasta principal do projeto contém os seguintes arquivos relevantes:
 
 ### Arquivos Verilog (.v):
 
-- `decodificador.v` — Arquivo principal com a lógica do decodificador.
+- `decodificador.v` — Módulo principal que comanda  a funcionalidade completa do decodificador. Ele atua como o ponto central de interconexão, instanciando e controlando os módulos binarios.v, caractere.v, hexadecimal\_mais.v e hexadecimal\_menos.v.
 - `binarios.v` — Implementa parte da codificação binária.
 - `caractere.v` — Implementa os caracteres da codificação/decodificação.
 - `hexadecimal_mais.v` — Módulo para manipulação hexadecimal mais significativo.
