@@ -1,0 +1,72 @@
+module hexadecimal_mais (input a, b, c ,d ,e,
+output seg1, seg2, seg3, seg4, seg5, seg6, seg7);
+
+
+// negações de entrada
+	
+	wire na, nb, nc, nd, ne;
+		
+			not nota(na, a);
+			not notb(nb, b);
+			not notc(nc, c);
+			not notd(nd, d);
+			not note(ne, e);
+	// saidas
+
+  wire hmA1, hmA2, hmA3, hmA4, hmA5; // segmento 1
+		
+		and a1 (hmA1, b, d);
+		and a2 (hmA2, b, c);
+		and a3 (hmA3, a, nd, e);
+		and a4 (hmA4, a, c);
+		and a5 (hmA5, a, b);
+		or saidaAHm (seg1, hmA1, hmA2, hmA3, hmA4, hmA5);
+	
+
+	wire hmB1, hmB2; // segmento 2
+	
+		and b1 (hmB1, a, nb, nc, ne);
+		and b2 (hmB2, a, nb, nc, d);
+		or saidaBHm (seg2, hmB1, hmB2 );
+		
+
+	wire hmc; 
+		
+		and c1 (hmc, a, b, c, d, e);
+		or saidaCHm (seg3, hmc);
+		
+
+	wire hmD1, hmD2, hmD3, hmD4, hmD5;
+	
+		and d1 (hmD1, b, d);
+		and d2 (hmD2, b, c);
+		and d3 (hmD3, a, nd, e);
+		and d4 (hmD4, a, c);
+		and d5 (hmD5, a, b);
+		or saidaDHm (seg4, hmD1, hmD2, hmD3, hmD4, hmD5);
+
+
+	wire hmE1, hmE2, hmE3;
+	
+		and e1 (hmE1, na);
+		and e2 (hmE2, nb, nc, e);
+		and e3 (hmE3, nb, nc, d);
+		or saidaEHm (seg5, hmE1, hmE2, hmE3);
+		
+
+	wire hmF1, hmF2;
+	
+		and f1 (hmF1, na, nb);
+		and f2 (hmF2, na, nc, nd);
+		or saidaFHm (seg6, hmF1, hmF2);
+
+		
+	wire hmG1, hmG2;
+		
+		and g1 (hmG1, a, c);
+		and g2 (hmG2, a, b);
+		or saidaGHm (seg7, hmG1, hmG2);
+
+	
+
+endmodule

@@ -1,0 +1,87 @@
+module caractere (input a, b, c ,d ,e,
+output seg1, seg2, seg3, seg4, seg5, seg6, seg7);
+	
+	
+		// wire negacao
+		wire na, nb, nc, nd, ne;
+		
+			not nota(na, a);
+			not notb(nb, b);
+			not notc(nc, c);
+			not notd(nd, d);
+			not note(ne, e);
+			
+		// wire saidas
+		wire sA1, sA2, sA3, sA4, sA5, sA6, sA7; // segmento 1
+			
+			and a1 (sA1, na, nb,nc,nd,e);
+			and a2 (sA2, nb,c,nd,ne);
+			and a3 (sA3, b,nc,d,e);
+			and a4 (sA4, b,c,nd,e);
+			and a5 (sA5, a, d,e);
+			and a6 (sA6, a, c);
+			and a7 (sA7, a, b);
+			or saidaA (seg1, sA1, sA2, sA3, sA4, sA5, sA6, sA7);
+			
+			 
+		wire sb1, sb2, sb3, sb4, sb5; // segento 2
+		
+			and b1 (sb1, na, nb, c, nd, e);
+			and b2 (sb2, na, c, d, ne);
+			and b3 (sb3, na, b, d, e);
+			and b4 (sb4, na, b, c, ne);
+			and b5 (sb5, a, nb, nc, ne);
+			or saidaB (seg2, sb1, sb2, sb3, sb4, sb5);
+			
+		
+	   wire sc1, sc2, sc3, sc4; // segmento 3
+		
+			and c1 (sc1, na,nb,nc,d,ne);
+			and c2 (sc2, na,b,c,ne);
+			and c3 (sc3, na,b,c,d);
+			and c4 (sc4, a,nb,nc,nd,ne);
+			or saidaC (seg3, sc1, sc2, sc3, sc4);
+ 
+ 
+		wire sd1, sd2, sd3, sd4, sd5, sd6, sd7, sd8; //segmento 4
+			
+			and d1 (sd1, na, nb, nc, nd, e);
+			and d2 (sd2, nb, c, nd, ne);
+			and d3 (sd3, c, d, e);
+			and d4 (sd4, b, nc, d, ne);
+			and d5 (sd5, a, nd, ne);
+			and d6 (sd6, a, d, e);
+			and d7 (sd7, a, c);
+			and d8 (sd8, a, b);
+			or saidaD (seg4, sd1, sd2, sd3, sd4, sd5, sd6, sd7, sd8);
+  
+  
+		wire se1, se2, se3, se4; // segmento 5
+	
+			and e1 (se1, na,nb,e);
+			and e2 (se2, na,nb,c,nd);
+			and e3 (se3, na,nc,nd,e);
+			and e4 (se4, a,nb,nc,ne);
+			or saidaE (seg5, se1, se2, se3, se4);
+		
+
+		wire sf1, sf2, sf3, sf4; //segmento 6
+		
+			and f1 (sf1, na, nb, nc, e);
+			and f2 (sf2, na, nb, nc, d);
+			and f3 (sf3, na, nb, d, e);
+			and f4 (sf4, na, b, c, nd, e);
+			or saidaF (seg6, sf1, sf2, sf3, sf4);
+
+
+		wire sg1, sg2, sg3, sg4, sg5, sg6; // segmento 7
+			
+			and g1 (sg1, na, nb, nc, nd);
+			and g2 (sg2, nb, c, d, e);
+			and g3 (sg3, b, c, nd, ne);
+			and g4 (sg4, a, c);
+			and g5 (sg5, a, b);
+			and g6 (sg6, nb, nc, nd, e);
+			or saidaG (seg7, sg1, sg2, sg3, sg4, sg5, sg6);
+			
+endmodule

@@ -1,0 +1,13 @@
+module binarios (input a, b, c ,d ,e,
+output led1, led2, led3, led4, led5, led6, led7);
+
+
+		// wire negacao
+		wire na, nb, nc, nd, ne;
+		
+			not nota(na, a);
+			not notb(nb, b);
+			not notc(nc, c);
+			not notd(nd, d);
+			not note(ne, e);
+endmodule

@@ -1,0 +1,17 @@
+module decodificador (input a, b, c ,d ,e,
+output seg1, seg2, seg3, seg4, seg5, seg6, seg7);
+
+	
+	
+	caractere();
+	hexadecimal_mais();
+	hexadecimal_menos();
+	binarios();
+	
+	
+	//wire T1;
+	
+	//Rot3Ckt1(.Cin(CIN), .A(A1), .B(B1), .S(E), .Cout(T1));
+	//Rot3Ckt2(.Cin(T1), .A(A2), .B(B2), .S(S), .Cout(OUT));
+
+endmodule
