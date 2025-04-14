@@ -10,7 +10,7 @@ A pasta principal do projeto contém os seguintes arquivos relevantes:
 
 - `decodificador.v` — Arquivo principal com a lógica do decodificador.
 - `binarios.v` — Implementa parte da codificação binária.
-- `caractere.v` — Define os caracteres usados na codificação/decodificação.
+- `caractere.v` — Implementa os caracteres da codificação/decodificação.
 - `hexadecimal_mais.v` — Módulo adicional para manipulação hexadecimal mais significativo.
 - `hexadecimal_menos.v` — Outro módulo auxiliar para operações com hexadecimal menos significativo.
 
@@ -19,3 +19,4 @@ A pasta principal do projeto contém os seguintes arquivos relevantes:
 ##
 
 ##
+
